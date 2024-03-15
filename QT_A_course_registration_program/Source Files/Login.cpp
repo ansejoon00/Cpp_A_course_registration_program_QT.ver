@@ -23,14 +23,14 @@ Login::Login(QWidget* parent)
 {
     ui->setupUi(this);
 
-    // QButtonGroup °´Ã¼ »ý¼º
+    // QButtonGroup ê°ì²´ ìƒì„±
     radioButtonGroup = new QButtonGroup(this);
 
-    // ¶óµð¿À ¹öÆ°µéÀ» ±×·ì¿¡ Ãß°¡
+    // ë¼ë””ì˜¤ ë²„íŠ¼ë“¤ì„ ê·¸ë£¹ì— ì¶”ê°€
     radioButtonGroup->addButton(ui->radioButton_Student);
     radioButtonGroup->addButton(ui->radioButton_Admin);
 
-    // ±×·ì ³»¿¡¼­ ÇÏ³ª¸¸ ¼±ÅÃÇÒ ¼ö ÀÖµµ·Ï ¼³Á¤
+    // ê·¸ë£¹ ë‚´ì—ì„œ í•˜ë‚˜ë§Œ ì„ íƒí•  ìˆ˜ ìžˆë„ë¡ ì„¤ì •
     radioButtonGroup->setExclusive(true);
 
     connect(ui->pushButton_Signup, SIGNAL(clicked()), this, SLOT(pushButton_Signup()));
@@ -117,12 +117,12 @@ void Login::pushButton_Login()
 
 void Login::pushButton_Exit()
 {
-    // »ç¿ëÀÚ¿¡°Ô Á¾·á ¿©ºÎ ¹¯±â
+    // ì‚¬ìš©ìžì—ê²Œ ì¢…ë£Œ ì—¬ë¶€ ë¬»ê¸°
     QMessageBox::StandardButton reply = QMessageBox::question(this, "Exit", "Are you sure you want to exit?",
         QMessageBox::Yes | QMessageBox::No);
 
     if (reply == QMessageBox::Yes) {
-        // Á¾·á ¹öÆ°ÀÌ ´­·ÈÀ» ¶§ µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ÇØÁ¦
+        // ì¢…ë£Œ ë²„íŠ¼ì´ ëˆŒë ¸ì„ ë•Œ ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° í•´ì œ
         db.close();
         qApp->exit();
     }
