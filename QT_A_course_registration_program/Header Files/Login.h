@@ -8,7 +8,10 @@
 #include "ui_Login.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class Login; };
+namespace Ui
+{
+    class Login;
+};
 QT_END_NAMESPACE
 
 class Login : public QMainWindow
