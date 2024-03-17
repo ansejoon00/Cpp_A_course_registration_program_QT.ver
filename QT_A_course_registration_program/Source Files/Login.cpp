@@ -18,10 +18,11 @@
 extern QSqlDatabase db;
 
 Login::Login(QWidget* parent)
-    : QMainWindow(parent)
-    , ui(new Ui::Login())
+    : QMainWindow(parent), ui(new Ui::Login())
 {
     ui->setupUi(this);
+
+    this->setWindowTitle("로그인");
 
     // QButtonGroup 객체 생성
     radioButtonGroup = new QButtonGroup(this);
@@ -38,12 +39,10 @@ Login::Login(QWidget* parent)
     connect(ui->pushButton_Exit, SIGNAL(clicked()), this, SLOT(pushButton_Exit()));
 }
 
-
 Login::~Login()
 {
     delete ui;
 }
-
 
 void Login::pushButton_Signup()
 {
@@ -51,7 +50,6 @@ void Login::pushButton_Signup()
     Signup* signup = new Signup(this);
     signup->exec();
 }
-
 
 // void Login::on_pushButton_Login_clicked()
 void Login::pushButton_Login()
@@ -67,7 +65,7 @@ void Login::pushButton_Login()
 
     if (!selectedRadioButton)
     {
-        QMessageBox::warning(this, "SignUP", "Please select either Admin or Student.");
+        QMessageBox::warning(this, "회원가입", "학생인지 관리자인지 체크해주세요.");
     }
     else
     {
@@ -85,16 +83,16 @@ void Login::pushButton_Login()
         qDebug() << "Query prepared: " << query.lastQuery();
         qDebug() << "Bound values: " << query.boundValues();
 
-        if (query.exec() && query.next()) {
+        if (query.exec() && query.next())
+        {
             qDebug() << "Login successful";
-            QMessageBox::information(this, "Login", "Login successful");
+            QMessageBox::information(this, "로그인", "로그인 성공!");
             if (ui->radioButton_Student->isChecked())
             {
                 qDebug() << "[Student Login!]";
                 loggedInUserId = id;
                 Student_Menu* student_menu = new Student_Menu(this);
                 student_menu->exec();
-                this->hide();
             }
             else if (ui->radioButton_Admin->isChecked())
             {
@@ -102,32 +100,31 @@ void Login::pushButton_Login()
                 loggedInUserId = id;
                 Admin_Menu* admin_menu = new Admin_Menu(this);
                 admin_menu->exec();
-                this->hide();
             }
         }
-        else {
+        else
+        {
             qDebug() << "Login failed. Please check your credentials.";
             qDebug() << "Query error:" << query.lastError().text();
             qDebug() << "Query executed: " << query.lastQuery();
-            QMessageBox::warning(this, "Login", "Login failed. Please try again.");
+            QMessageBox::warning(this, "로그인", "로그인 실패. 다시 시도해 주세요.");
         }
     }
 }
 
-
 void Login::pushButton_Exit()
 {
     // 사용자에게 종료 여부 묻기
-    QMessageBox::StandardButton reply = QMessageBox::question(this, "Exit", "Are you sure you want to exit?",
+    QMessageBox::StandardButton reply = QMessageBox::question(this, "종료", "프로그램을 종료하시겠습니까?",
         QMessageBox::Yes | QMessageBox::No);
 
-    if (reply == QMessageBox::Yes) {
+    if (reply == QMessageBox::Yes)
+    {
         // 종료 버튼이 눌렸을 때 데이터베이스 연결 해제
         db.close();
         qApp->exit();
     }
 }
-
 
 QString Login::getLoggedInUserId() const
 {
