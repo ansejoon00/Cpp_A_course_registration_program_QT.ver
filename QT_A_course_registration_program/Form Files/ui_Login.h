@@ -26,24 +26,24 @@ QT_BEGIN_NAMESPACE
 class Ui_Login
 {
 public:
-    QWidget *centralWidget;
-    QGroupBox *groupBox;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QLineEdit *lineEdit_ID;
-    QHBoxLayout *horizontalLayout_2;
-    QLineEdit *lineEdit_Password;
-    QPushButton *pushButton_Login;
-    QWidget *layoutWidget;
-    QHBoxLayout *horizontalLayout_1;
-    QRadioButton *radioButton_Student;
-    QRadioButton *radioButton_Admin;
-    QPushButton *pushButton_Exit;
-    QPushButton *pushButton_Signup;
-    QStatusBar *statusBar;
+    QWidget* centralWidget;
+    QGroupBox* groupBox;
+    QWidget* verticalLayoutWidget;
+    QVBoxLayout* verticalLayout;
+    QHBoxLayout* horizontalLayout;
+    QLineEdit* lineEdit_ID;
+    QHBoxLayout* horizontalLayout_2;
+    QLineEdit* lineEdit_Password;
+    QPushButton* pushButton_Login;
+    QWidget* layoutWidget;
+    QHBoxLayout* horizontalLayout_1;
+    QRadioButton* radioButton_Student;
+    QRadioButton* radioButton_Admin;
+    QPushButton* pushButton_Exit;
+    QPushButton* pushButton_Signup;
+    QStatusBar* statusBar;
 
-    void setupUi(QMainWindow *LoginClass)
+    void setupUi(QMainWindow* LoginClass)
     {
         if (LoginClass->objectName().isEmpty())
             LoginClass->setObjectName("LoginClass");
@@ -121,7 +121,7 @@ public:
         QMetaObject::connectSlotsByName(LoginClass);
     } // setupUi
 
-    void retranslateUi(QMainWindow *LoginClass)
+    void retranslateUi(QMainWindow* LoginClass)
     {
         LoginClass->setWindowTitle(QCoreApplication::translate("LoginClass", "Login", nullptr));
         groupBox->setTitle(QCoreApplication::translate("LoginClass", "\353\241\234\352\267\270\354\235\270", nullptr));
