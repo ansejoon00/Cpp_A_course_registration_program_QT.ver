@@ -170,6 +170,7 @@ void Signup::pushButton_SignUP()
             if (query.exec())
             {
                 QMessageBox::information(this, "회원가입", "회원가입 성공!");
+                close();
             }
             else
             {
