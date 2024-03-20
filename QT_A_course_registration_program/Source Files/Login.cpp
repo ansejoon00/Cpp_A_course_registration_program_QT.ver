@@ -51,7 +51,6 @@ void Login::pushButton_Signup()
     signup->exec();
 }
 
-// void Login::on_pushButton_Login_clicked()
 void Login::pushButton_Login()
 {
     QAbstractButton* selectedRadioButton = radioButtonGroup->checkedButton();
@@ -65,7 +64,7 @@ void Login::pushButton_Login()
 
     if (!selectedRadioButton)
     {
-        QMessageBox::warning(this, "회원가입", "학생인지 관리자인지 체크해주세요.");
+        QMessageBox::warning(this, "로그인", "학생인지 관리자인지 체크해주세요.");
     }
     else
     {
