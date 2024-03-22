@@ -13,10 +13,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -33,7 +34,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_4;
-    QListView *listView_2;
+    QTableView *tableView_2;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *pushButton_Delete;
     QPushButton *pushButton_Change;
@@ -43,7 +44,7 @@ public:
     QSpacerItem *horizontalSpacer_1;
     QLabel *label_1;
     QSpacerItem *horizontalSpacer_2;
-    QListView *listView_1;
+    QTableView *tableView_1;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton_Add;
     QPushButton *pushButton_Search;
@@ -61,7 +62,7 @@ public:
         pushButton_Exit->setGeometry(QRect(570, 410, 75, 21));
         verticalLayoutWidget_2 = new QWidget(Dialog);
         verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(10, 200, 641, 161));
+        verticalLayoutWidget_2->setGeometry(QRect(10, 200, 641, 171));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -83,10 +84,10 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_3);
 
-        listView_2 = new QListView(verticalLayoutWidget_2);
-        listView_2->setObjectName("listView_2");
+        tableView_2 = new QTableView(verticalLayoutWidget_2);
+        tableView_2->setObjectName("tableView_2");
 
-        verticalLayout_2->addWidget(listView_2);
+        verticalLayout_2->addWidget(tableView_2);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName("horizontalLayout_4");
@@ -103,7 +104,7 @@ public:
         pushButton_Change->setGeometry(QRect(20, 410, 111, 24));
         verticalLayoutWidget = new QWidget(Dialog);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(10, 20, 639, 159));
+        verticalLayoutWidget->setGeometry(QRect(10, 20, 639, 171));
         verticalLayout_1 = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout_1->setObjectName("verticalLayout_1");
         verticalLayout_1->setContentsMargins(0, 0, 0, 0);
@@ -125,10 +126,10 @@ public:
 
         verticalLayout_1->addLayout(horizontalLayout_1);
 
-        listView_1 = new QListView(verticalLayoutWidget);
-        listView_1->setObjectName("listView_1");
+        tableView_1 = new QTableView(verticalLayoutWidget);
+        tableView_1->setObjectName("tableView_1");
 
-        verticalLayout_1->addWidget(listView_1);
+        verticalLayout_1->addWidget(tableView_1);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
@@ -142,7 +143,7 @@ public:
 
         pushButton_Search = new QPushButton(Dialog);
         pushButton_Search->setObjectName("pushButton_Search");
-        pushButton_Search->setGeometry(QRect(20, 370, 111, 24));
+        pushButton_Search->setGeometry(QRect(20, 380, 111, 24));
 
         retranslateUi(Dialog);
 
