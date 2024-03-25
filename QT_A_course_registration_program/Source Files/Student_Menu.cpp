@@ -60,7 +60,7 @@ void Student_Menu::pushButton_Search()
         // 결과가 있는 경우
         if (DB_Course_Query.size() > 0)
         {
-            qDebug() << "[ 현재 개설된 모든 강의 목록 ]";
+            qDebug() << "[ 현재 수강 신청 가능한 강의 목록 ]";
 
             // 모든 강의 정보 출력 및 모델에 추가
             courseListModel->clear();
@@ -104,7 +104,7 @@ void Student_Menu::pushButton_Search()
         // 결과가 있는 경우
         if (DB_Course_Query.size() > 0)
         {
-            qDebug() << "[ 현재 신청된 모든 강의 목록 ]";
+            qDebug() << "[ 현재 수강 신청된 강의 목록 ]";
 
             // 신청된 강의 정보 출력 및 모델에 추가
             enrollListModel->clear();
