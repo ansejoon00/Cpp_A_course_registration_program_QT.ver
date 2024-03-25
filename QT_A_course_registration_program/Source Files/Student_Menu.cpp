@@ -20,7 +20,7 @@ Student_Menu::Student_Menu(QWidget* parent)
 
     this->setWindowTitle("학생 메뉴");
 
-    // ListView에 사용할 모델 초기화
+    // TableView에 사용할 모델 초기화
     courseListModel = new QStandardItemModel(this);
     ui->tableView_1->setModel(courseListModel);
 
@@ -254,7 +254,8 @@ void Student_Menu::pushButton_Delete()
 void Student_Menu::pushButton_ChangePW()
 {
     qDebug() << "ChangePW button clicked!";
-    Change_PW* change_pw = new Change_PW(this);
+    // 부모 윈도우를 직접 전달
+    Change_PW* change_pw = new Change_PW(dynamic_cast<QWidget*>(this->parent())); 
     change_pw->exec();
 }
 
