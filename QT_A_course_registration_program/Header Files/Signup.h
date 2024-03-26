@@ -24,5 +24,4 @@ private slots:
     void pushButton_Back();
     void pushButton_SignUP();
 };
-
 #endif // SIGNUP_H
