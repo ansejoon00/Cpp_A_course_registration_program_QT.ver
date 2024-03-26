@@ -1,4 +1,4 @@
-﻿#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QMessageBox>
 #include <QSqlQuery>
 #include <QtSql>
 
